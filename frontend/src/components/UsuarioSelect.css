@@ -1,0 +1,8 @@
+.usuario-select {
+  margin-top: 1rem;
+}
+
+.usuario-select select {
+  margin-left: 0.5rem;
+  padding: 0.2rem;
+}

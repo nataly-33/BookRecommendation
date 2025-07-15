@@ -1,0 +1,43 @@
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      MONGO_INITDB_DATABASE: proyectobst
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - mongodb_data:/data/db
+    restart: always
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    environment:
+      MONGO_URI: "mongodb://nataly-33:passWord63@mongodb:27017/proyectografo"
+    depends_on:
+      - mongodb
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "5174:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    environment:
+      - HOST=0.0.0.0
+
+volumes:
+  mongodb_data:

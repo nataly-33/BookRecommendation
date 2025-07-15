@@ -1,0 +1,14 @@
+.recomendacion-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.recomendacion-item {
+  border: 1px dashed #aaa;
+  padding: 1rem;
+  width: 150px;
+  text-align: center;
+  background-color: #fffef6;
+  border-radius: 8px;
+}

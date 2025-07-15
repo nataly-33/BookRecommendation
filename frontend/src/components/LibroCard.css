@@ -1,0 +1,14 @@
+.libro-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 150px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.libro-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}

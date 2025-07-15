@@ -1,0 +1,12 @@
+.populares-container {
+  padding: 1rem;
+}
+
+.populares-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.populares-container li {
+  margin: 0.5rem 0;
+}
