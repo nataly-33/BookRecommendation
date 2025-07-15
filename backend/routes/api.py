@@ -37,7 +37,6 @@ def recomendar(nombre):
 def libros_favoritos(nombre):
     return grafo_controller.obtener_libros_de_usuario(nombre)
 
-
 @api_bp.route("/centralidad", methods=["GET"])
 def centralidad():
     return grafo_controller.obtener_centralidad_grado()

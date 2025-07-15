@@ -3,12 +3,21 @@
   padding: 1rem;
   width: 150px;
   text-align: center;
-  background-color: #f9f9f9;
   border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.libro-card img {
+.libro-img {
   width: 100%;
   height: auto;
-  margin-bottom: 0.5rem;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.libro-estrellas {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
 }

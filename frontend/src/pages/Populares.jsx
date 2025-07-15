@@ -11,18 +11,27 @@ export default function Populares() {
   }, []);
 
   return (
-    <div style={{ padding: "1rem" }}>
-      <h2>📘 Libros más populares</h2>
-      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+    <div className="populares-container">
+      <h2>Libros más populares</h2>
+      <div className="populares-libros">
         {data.libros_mas_populares.map((libro, i) => (
-          <LibroCard key={i} data={{ libro: libro.libro, puntuacion: libro.conexiones }} />
+          <LibroCard
+            key={i}
+            data={{
+              libro: libro.libro,
+              puntuacion: libro.conexiones,
+              imagen: libro.imagen,
+            }}
+          />
         ))}
       </div>
 
-      <h2 style={{ marginTop: "2rem" }}>👤 Usuarios más conectados</h2>
-      <ul>
+      <h2 className="usuarios-title">Usuarios más conectados</h2>
+      <ul className="usuarios-lista">
         {data.usuarios_mas_conectados.map((u, i) => (
-          <li key={i}>👤 {u.usuario} — {u.conexiones} libros</li>
+          <li key={i}>
+            {u.usuario} — {u.conexiones} libros conectados
+          </li>
         ))}
       </ul>
     </div>

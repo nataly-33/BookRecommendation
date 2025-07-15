@@ -2,7 +2,7 @@ class GrafoBipartito:
     def __init__(self):
         self.usuarios = set()
         self.libros = set()
-        self.adyacencia = {}  # clave: nodo, valor: lista de (vecino, peso)
+        self.adyacencia = {} 
 
     def agregar_usuario(self, usuario):
         if usuario not in self.adyacencia:
@@ -18,7 +18,6 @@ class GrafoBipartito:
         self.agregar_usuario(usuario)
         self.agregar_libro(libro)
 
-        # evitar duplicados
         self.eliminar_interaccion(usuario, libro)
 
         self.adyacencia[usuario].append((libro, puntuacion))
@@ -57,11 +56,9 @@ class GrafoBipartito:
             if similitud > 0:
                 similitudes.append((otro, similitud))
 
-        # Ordenar por similitud descendente
         similitudes.sort(key=lambda x: x[1], reverse=True)
         return [u for (u, _) in similitudes]
     
-
     def recomendar_libros(self, usuario, top_n=5):
         similares = self.usuarios_similares(usuario)
         libros_usuario = set([libro for (libro, _) in self.adyacencia[usuario]])
@@ -72,9 +69,8 @@ class GrafoBipartito:
                 if libro not in libros_usuario:
                     if libro not in recomendados:
                         recomendados[libro] = 0
-                    recomendados[libro] += puntuacion  # suma las puntuaciones como "fuerza"
+                    recomendados[libro] += puntuacion 
 
-        # Ordenar por mayor "fuerza" (puntuación acumulada)
         recomendaciones = sorted(recomendados.items(), key=lambda x: x[1], reverse=True)
         return [libro for (libro, _) in recomendaciones[:top_n]]
 
@@ -103,3 +99,4 @@ class GrafoBipartito:
             "usuarios_mas_conectados": top_usuarios,
             "libros_mas_populares": top_libros
         }
+    

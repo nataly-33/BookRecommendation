@@ -2,11 +2,17 @@
   padding: 1rem;
 }
 
-.populares-container ul {
-  list-style: none;
-  padding: 0;
+.populares-libros {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.populares-container li {
-  margin: 0.5rem 0;
+.usuarios-title {
+  margin-top: 2rem;
+}
+
+.usuarios-lista {
+  list-style: none;
+  padding: 0;
 }

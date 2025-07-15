@@ -9,7 +9,10 @@ app = Flask(__name__)
 CORS(app)
 
 # Config Mongo
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI", "mongodb://mongo:27017/recomendador")
+app.config["MONGO_URI"] = os.environ.get(
+    "MONGO_URI",
+    "mongodb://nataly-33:passWord63@mongodb:27017/proyectografo"
+)
 mongo = PyMongo(app)
 
 # Pasamos la conexión a los controladores

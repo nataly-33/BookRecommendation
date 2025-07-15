@@ -7,7 +7,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: rootpassword
-      MONGO_INITDB_DATABASE: proyectobst
+      MONGO_INITDB_DATABASE: proyectografo
     volumes:
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
       - mongodb_data:/data/db
